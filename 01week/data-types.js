@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 function getDate () {
   return Date();
