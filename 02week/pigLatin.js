@@ -9,11 +9,25 @@ const rl = readline.createInterface({
 
 
 function pigLatin(word) {
+  word = word.toLowerCase().trim();
+  var vowel = ['e', 'a', 'i', 'o', 'u'];
+  var results = [];
 
-  // Your code here
-
+  for (var i = 0; i < vowel.length; i++) {
+    if (word.indexOf(vowel[i]) > -1) {
+      results.push(word.indexOf(vowel[i]));
+    }
+  }
+  results.sort();
+  var vowelIndex = results[0];
+  var first = word.slice(vowelIndex, word.length);
+  var second = word.slice(0, vowelIndex);
+  if (vowelIndex === 0) {
+    return word + 'yay';
+  } else {
+    return first + second + 'ay';
+  }
 }
-
 
 function getPrompt() {
   rl.question('word ', (answer) => {
