@@ -1,0 +1,28 @@
+'use strict';
+var cars = ['Ford', 'Dodge', 'Chevrolet', 'Buick'];
+console.log(cars.length);
+var moreCars = ['Toyota', 'Mazda', 'Hyundai', 'Honda'];
+var totalCars = cars.concat(moreCars);
+console.log(totalCars.indexOf('Honda'));
+console.log(totalCars.lastIndexOf('Ford'));
+var stringOfCars = totalCars.join(' ');
+totalCars = stringOfCars.split(' ');
+console.log(totalCars);
+var carsInReverse = totalCars.reverse();
+console.log(carsInReverse);
+console.log(carsInReverse.sort());
+var removedCars = carsInReverse.sort().slice(3, 5);
+console.log(removedCars);
+console.log(carsInReverse);
+console.log(carsInReverse.splice(1, 2, 'Ford', 'Honda'));
+console.log(carsInReverse);
+carsInReverse.push('Chevrolet', 'Dodge');
+console.log(carsInReverse);
+console.log(carsInReverse.pop());
+console.log(carsInReverse.shift());
+carsInReverse.unshift('Ferrari');
+console.log(carsInReverse);
+var numbers = [23, 45, 0, 2];
+numbers.forEach(function(element) {
+console.log(element + 2);
+});
