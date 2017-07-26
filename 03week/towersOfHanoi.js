@@ -39,9 +39,11 @@ function isLegal(startStack, endStack) {
 
 function checkForWin() {
   // Your code here
-   if (stacks.b === [4, 3, 2, 1] || stacks.c === [4, 3, 2, 1]) {
+   if (stacks.b.length === 4 || stacks.c.length === 4) {
      return true;
-  }
+  } else {
+     return false;
+}
 }
 
 function towersOfHanoi(startStack, endStack) {
