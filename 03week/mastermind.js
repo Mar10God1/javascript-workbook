@@ -63,7 +63,7 @@ function mastermind (guess) {
 
 function getPrompt () {
   rl.question('guess: ', (guess) => {
-    mastermind(guess);
+    console.log(mastermind(guess));
     printBoard();
     getPrompt();
   });
