@@ -28,25 +28,25 @@ function getRandomInt (min, max) {
 }
 
 function generateHint (solution, guess) {
-  var letterNlocation = 0;
-  var correctLetter = 0;
+  var loc = 0;
+  var ltr = 0;
   solution = solution.split('');
   guess = guess.split('');
   for (var i = 0; i < solution.length; i++) {
     if (solution[i] === guess[i]) {
-      letterNlocation++;
+      loc++;
       solution[i] = null;
     }
   }
 
   for (i = 0; i < solution.length; i++) {
-    var letterIndex = solution.indexOf(guess[i]);
-    if (letterIndex > -1) {
-      correctLetter++;
-      solution[letterIndex] = null;
+    var ltrIndex = solution.indexOf(guess[i]);
+    if (ltrIndex > -1) {
+      ltr++;
+      solution[ltrIndex] = null;
     }
   }
-  return letterNlocation + '-' + correctLetter;
+  return loc + '-' + ltr;
 }
 
 function mastermind (guess) {
