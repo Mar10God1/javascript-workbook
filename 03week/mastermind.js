@@ -32,14 +32,14 @@ function generateHint (solution, guess) {
   var ltr = 0;
   solution = solution.split('');
   guess = guess.split('');
-  for (var i = 0; i < solution.length; i++) {
+  for (var i = 0; i < 4; i++) {
     if (solution[i] === guess[i]) {
       loc++;
       solution[i] = null;
     }
   }
 
-  for (i = 0; i < solution.length; i++) {
+  for (i = 0; i < 4; i++) {
     var ltrIndex = solution.indexOf(guess[i]);
     if (ltrIndex > -1) {
       ltr++;
