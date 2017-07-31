@@ -52,9 +52,10 @@ function generateHint (solution, guess) {
 function mastermind (guess) {
   solution = 'abcd';
   if (guess === solution) {
+    console.log('You guessed it!');
     return ('You guessed it!');
   } else if (board.length === 10) {
-    return ('Game Over');
+    console.log('Game Over');
   } else {
     var hint = generateHint(solution, guess);
     board.push(guess + ': ' + hint);
@@ -63,7 +64,7 @@ function mastermind (guess) {
 
 function getPrompt () {
   rl.question('guess: ', (guess) => {
-    console.log(mastermind(guess));
+    mastermind(guess);
     printBoard();
     getPrompt();
   });
