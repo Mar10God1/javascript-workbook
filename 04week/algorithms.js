@@ -16,14 +16,63 @@ for (let i = 0; i < 1000; i++) {
 
 function bubbleSort(arr) {
   // Your code here
+  var sorted;
+  while (!sorted) {
+  sorted = true;
+  for (var i = 0; i < arr.length -1; i++) {
+    if (arr[i] > arr[i +1]) {
+       sorted = false;
+       var temp;
+        temp = arr[i];
+        arr[i] = arr[i + 1];
+        arr[i + 1] = temp;
+     }
+   }
+   return arr;
+ }
 }
 
-function mergeSort(arr) {
+function mergeSort (arr) {
   // Your code here
-}
+   var len = arr.length;
+   if(len < 2)
+    return arr;
+  var mid = Math.floor(len/2),
+    left = arr.slice(0,mid),
+    right = arr.slice(mid);
+  return merge(mergeSort(left), mergeSort(right));
+  }
+  function merge (left, right) {
+    var result = [],
+      lLen = left.length,
+      rLen = right.length,
+      l = 0,
+      r = 0;
+  while(l < lLen && r < rLen) {
+     if(left[l] < right[r]) {
+       result.push(left[l++]);
+     } else {
+       result.push(right[r++]);
+     }
+  }
+  return result.concat(left.slice(l)).concat(right.slice(r));
+  }
 
-function binarySearch(arr, item) {
+function binarySearch (arr, item) {
   // Your code here
+  var firstIndex = 0,
+  lastIndex = arr.length - 1,
+  middleIndex = Math.floor((lastIndex + firstIndex)/2);
+
+  while(arr[middleIndex] !== item && firstIndex < lastIndex) {
+    if (item < arr[middleIndex]) {
+        lastIndex = middleIndex - 1;
+    } else if (item > arr[middleIndex]) {
+        firstIndex = middleIndex + 1;
+    }
+    middleIndex = Math.floor((lastIndex + firstIndex)/2);
+  }
+  return (arr[middleIndex] !== item) ? false : middleIndex;
 }
 
 // Tests
