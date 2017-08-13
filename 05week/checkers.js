@@ -7,9 +7,15 @@ const rl = readline.createInterface({
   output: process.stdout
 });
 
+let newchecker = new Checker('white');
 
-function Checker() {
+function Checker(color) {
   // Your code here
+  if (color === 'white') {
+    this.symbol = 'W';
+  } else {
+    this.symbol = 'B';
+  }
 }
 
 function Board() {
@@ -53,14 +59,46 @@ function Board() {
   };
 
   // Your code here
+  this.checkers = [];
+  this.createCheckers = function () {
+    const whitePositions = [[0, 1], [0, 3], [0, 5], [0, 7],
+    [1, 0], [1, 2], [1, 4], [1, 6],
+    [2, 1], [2, 3], [2, 5], [2, 7]];
+    const blackPositions = [[5, 0], [5, 2], [5, 4], [5, 6],
+    [6, 1], [6, 3], [6, 5], [6, 7],
+    [7, 0], [7, 2], [7, 4], [7, 6]];
+    for (let i = 0; i < whitePositions.length; i++) {
+      this.checkers.push(this.grid[whitePositions[i][0]][whitePositions[i][1]] = new Checker('white'));
+      this.checkers.push(this.grid[blackPositions[i][0]][blackPositions[i][1]] = new Checker('black'));
+    }
+  };
+  this.selectChecker = function (row, column) {
+    return this.grid[row][column];
+  };
+  this.killChecker = function (position) {
+    const dyingChecker = this.selectChecker(position[0],position[1]);
+    const index = this.checkers.indexOf(dyingChecker);
+    this.checkers.splice(index,1);
+    this.grid[position[0]][position[1]] = null;
+  };
 }
-function Game() {
-
+function Game () {
   this.board = new Board();
-
-  this.start = function() {
+  this.start = function () {
     this.board.createGrid();
-    // Your code here
+    this.board.createCheckers();
+  };
+  this.moveChecker = function (from, to) {
+    const fromX = parseInt(from[0]);
+    const fromY = parseInt(from[1]);
+    const toX = parseInt(to[0]);
+    const toY = parseInt(to[1]);
+    const checker = this.board.selectChecker(from[0], from[1]);
+    this.board.grid[ toX ][ toY ] = checker;
+    this.board.grid[fromX][fromY] = null;
+    if (Math.sqrt((toX - fromX)^2 + (toY - fromY)^2) >= 2) {
+      this.board.killChecker([(toX + fromX) / 2, (toY + fromY) / 2]);
+    }
   };
 }
 
