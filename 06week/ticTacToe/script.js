@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let toggle = true;
   let winArr = {};
   let horWin = () => {
-    if (winArr[0] === winArr[1] && winArr[1] === winArr[2]  && winArr[1] !== undefined || winArr[3] === winArr[4] && winArr[4] === winArr[5]  && winArr[4] !== undefined || winArr[6] === winArr[7] && winArr[7] === winArr[8] && winArr[7] !== undefined ) {
+    if (winArr[0] === winArr[1] && winArr[1] === winArr[2] && winArr[1] !== undefined || winArr[3] === winArr[4] && winArr[4] === winArr[5] && winArr[4] !== undefined || winArr[6] === winArr[7] && winArr[7] === winArr[8] && winArr[7] !== undefined) {
       return true;
     }
   };
@@ -42,6 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelector('button').addEventListener('click', (e) => {
     document.querySelectorAll('[data-cell]').forEach((div) => {
       div.innerHTML = '';
+      winArr = {};
     });
   });
 });
