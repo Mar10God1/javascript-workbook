@@ -1,0 +1,210 @@
+body {
+ background: grey;
+font-family: 'Orbitron', sans-serif;
+}
+
+li {
+  list-style: none;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 5px;
+  height: 570px;
+  width: 590px;
+  background-color: #4D4D4D;
+}
+
+.header {
+  margin: 0 auto;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding: 10px;
+  border: 5px solid #424242;
+  text-align: center;
+  width: 550px;
+  font-size: 50px;
+  text-shadow: 0 0 5px #00bfff;
+}
+
+
+.gameBoard {
+  margin: 5px;
+  border: 5px solid #424242;
+  border-radius: 5px;
+  float: left;
+  height: 212px;
+  width: 50px;
+  background-color: #4D4D4D;
+}
+
+.playBoard {
+  margin: 5px;
+  border: 5px solid #424242;
+  border-radius: 5px;
+  float: left;
+  height: 212px;
+  width: 500px;
+  background-color: #4D4D4D;
+
+}
+
+.hintBoard {
+  margin: 5px;
+  border: 5px solid #424242;
+  border-radius: 5px;
+  float: left;
+  height: 50px;
+  width: 500px;
+  background-color: #4D4D4D;
+  display: flex;
+}
+
+.selected {
+    margin: 5px;
+    border: 5px solid #424242;
+    border-radius: 5px;
+    float: left;
+    height: 50px;
+    width: 50px;
+    background-color: #4D4D4D;
+  }
+
+
+.selector, .footer {
+  display: flex;
+  justify-content: space-around;
+  margin: 5px;
+  border: 5px solid #424242;
+  border-radius: 5px;
+  float: left;
+  padding: 10px;
+  height: 50px;
+  width: 550px;
+  background-color: #4D4D4D;
+
+}
+.selector li {
+  border: 2px solid #424242;
+  border-radius: 5px;
+}
+
+
+
+
+.offTile {
+  display: inline-block;
+  height: 50px;
+  width: 50px;
+  background: url('images/offTile.jpg');
+}
+
+.blueTile {
+  display: inline-block;
+  height: 50px;
+  width: 50px;
+  background: url('images/blueTile.jpg');
+}
+
+.greenTile {
+  display: inline-block;
+  height: 50px;
+  width: 50px;
+  background: url('images/greenTile.jpg');
+}
+
+.redTile {
+  display: inline-block;
+  height: 50px;
+  width: 50px;
+  background: url('images/redTile.jpg');
+}
+
+.yellowTile {
+  display: inline-block;
+  height: 50px;
+  width: 50px;
+  background: url('images/yellowTile.jpg');
+}
+
+.orangeTile {
+  display: inline-block;
+  height: 50px;
+  width: 50px;
+  background: url('images/orangeTile.jpg');
+}
+
+.cyanTile {
+  display: inline-block;
+  height: 50px;
+  width: 50px;
+  background: url('images/cyanTile.jpg');
+}
+
+.pinkTile {
+  display: inline-block;
+  height: 50px;
+  width: 50px;
+  background: url('images/pinkTile.jpg');
+}
+
+.selectedColor {
+  border: 2px solid grey;
+}
+
+
+.hints {
+  height: 40px;
+  width: 40px;
+  padding: 5px;
+}
+
+.placeHolder {
+  height: 20px;
+  width: 20px;
+  display: inline-block;
+  background: url('images/offTile.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.rightColor {
+  height: 20px;
+  width: 20px;
+  display: inline-block;
+  background: url('images/whiteTile.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.rightColorLocation {
+  height: 20px;
+  width: 20px;
+  display: inline-block;
+  background: url('images/limeTile.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.submit {
+  font-family: 'Orbitron', sans-serif;
+  border-radius: 5px;
+  width: 100%;
+  height: 50px;
+
+}
+
+.winner {
+  margin: 0 auto;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding: 10px;
+  border: 5px solid #424242;
+  text-align: center;
+  width: 550px;
+  font-size: 50px;
+  text-shadow: 0 0 5px #FF002A;
+}
