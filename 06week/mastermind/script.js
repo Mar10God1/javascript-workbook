@@ -53,7 +53,6 @@ document.addEventListener('DOMContentLoaded', () => {
     return hintArray;
   }
 
-
   const container = document.createElement('div');
   container.className = 'container';
   document.querySelector('body').prepend(container);
@@ -212,8 +211,7 @@ document.addEventListener('DOMContentLoaded', () => {
   Tile40.className = 'offTile';
   playBoard.appendChild(Tile40);
 
-
-  // selected
+  // Selected Color
   const selected = document.createElement('div');
   selected.className = 'selected';
   document.querySelector('div').appendChild(selected);
@@ -227,6 +225,7 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelector('div').appendChild(hintBoard);
 
   // Hint Tiles
+  // Hint Column 1
   const hint1 = document.createElement('div');
   hint1.className = 'hints';
   hintBoard.appendChild(hint1);
@@ -242,7 +241,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const hintTile4 = document.createElement('div');
   hintTile4.className = 'placeHolder';
   hint1.appendChild(hintTile4);
-
+  // Hint Column 2
   const hint2 = document.createElement('div');
   hint2.className = 'hints';
   hintBoard.appendChild(hint2);
@@ -258,8 +257,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const hintTile8 = document.createElement('div');
   hintTile8.className = 'placeHolder';
   hint2.appendChild(hintTile8);
-
-
+  // Hint Column 3
   const hint3 = document.createElement('div');
   hint3.className = 'hints';
   hintBoard.appendChild(hint3);
@@ -275,8 +273,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const hintTile12 = document.createElement('div');
   hintTile12.className = 'placeHolder';
   hint3.appendChild(hintTile12);
-
-
+  // Hint Column 4
   const hint4 = document.createElement('div');
   hint4.className = 'hints';
   hintBoard.appendChild(hint4);
@@ -292,8 +289,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const hintTile16 = document.createElement('div');
   hintTile16.className = 'placeHolder';
   hint4.appendChild(hintTile16);
-
-
+  // Hint Column 5
   const hint5 = document.createElement('div');
   hint5.className = 'hints';
   hintBoard.appendChild(hint5);
@@ -309,8 +305,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const hintTile20 = document.createElement('div');
   hintTile20.className = 'placeHolder';
   hint5.appendChild(hintTile20);
-
-
+  // Hint Column 6
   const hint6 = document.createElement('div');
   hint6.className = 'hints';
   hintBoard.appendChild(hint6);
@@ -326,8 +321,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const hintTile24 = document.createElement('div');
   hintTile24.className = 'placeHolder';
   hint6.appendChild(hintTile24);
-
-
+  // Hint Column 7
   const hint7 = document.createElement('div');
   hint7.className = 'hints';
   hintBoard.appendChild(hint7);
@@ -343,8 +337,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const hintTile28 = document.createElement('div');
   hintTile28.className = 'placeHolder';
   hint7.appendChild(hintTile28);
-
-
+  // Hint Column 8
   const hint8 = document.createElement('div');
   hint8.className = 'hints';
   hintBoard.appendChild(hint8);
@@ -360,8 +353,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const hintTile32 = document.createElement('div');
   hintTile32.className = 'placeHolder';
   hint8.appendChild(hintTile32);
-
-
+  // Hint Column 9
   const hint9 = document.createElement('div');
   hint9.className = 'hints';
   hintBoard.appendChild(hint9);
@@ -377,8 +369,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const hintTile36 = document.createElement('div');
   hintTile36.className = 'placeHolder';
   hint9.appendChild(hintTile36);
-
-
+  // Hint Column 10
   const hint10 = document.createElement('div');
   hint10.className = 'hints';
   hintBoard.appendChild(hint10);
@@ -394,9 +385,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const hintTile40 = document.createElement('div');
   hintTile40.className = 'placeHolder';
   hint10.appendChild(hintTile40);
-
-
-
 
 // Selector Board
   const selector = document.createElement('div');
@@ -464,7 +452,6 @@ document.addEventListener('DOMContentLoaded', () => {
   let submitPlay1 = footer.querySelectorAll('button');
   submitPlay1.forEach((item) => {
     item.addEventListener('click', (e) => {
-debugger;
       hintArray = ['placeHolder', 'placeHolder', 'placeHolder', 'placeHolder'];
       guess.push(gameTile1.className);
       guess.push(gameTile2.className);
@@ -485,7 +472,7 @@ debugger;
         gameTile2.className = 'offTile';
         gameTile3.className = 'offTile';
         gameTile4.className = 'offTile';
-        if (solution == guess) {
+        if (solution[0] == guess[0] && solution[1] == guess[1] && solution[2] == guess[2] && solution[3] == guess[3]) {
           header.className = 'winner';
           header.textContent = 'Winner!'
           console.log('win');
@@ -505,7 +492,7 @@ debugger;
         gameTile2.className = 'offTile';
         gameTile3.className = 'offTile';
         gameTile4.className = 'offTile';
-        if (solution == guess) {
+        if (solution[0] == guess[0] && solution[1] == guess[1] && solution[2] == guess[2] && solution[3] == guess[3]) {
           header.className = 'winner';
           header.textContent = 'Winner!'
           console.log('win');
@@ -525,7 +512,7 @@ debugger;
         gameTile2.className = 'offTile';
         gameTile3.className = 'offTile';
         gameTile4.className = 'offTile';
-        if (solution == guess) {
+        if (solution[0] == guess[0] && solution[1] == guess[1] && solution[2] == guess[2] && solution[3] == guess[3]) {
           header.className = 'winner';
           header.textContent = 'Winner!'
           console.log('win');
@@ -545,7 +532,7 @@ debugger;
         gameTile2.className = 'offTile';
         gameTile3.className = 'offTile';
         gameTile4.className = 'offTile';
-        if (solution == guess) {
+        if (solution[0] == guess[0] && solution[1] == guess[1] && solution[2] == guess[2] && solution[3] == guess[3]) {
           header.className = 'winner';
           header.textContent = 'Winner!'
           console.log('win');
@@ -565,7 +552,7 @@ debugger;
         gameTile2.className = 'offTile';
         gameTile3.className = 'offTile';
         gameTile4.className = 'offTile';
-        if (solution == guess) {
+        if (solution[0] == guess[0] && solution[1] == guess[1] && solution[2] == guess[2] && solution[3] == guess[3]) {
           header.className = 'winner';
           header.textContent = 'Winner!'
           console.log('win');
@@ -585,7 +572,7 @@ debugger;
         gameTile2.className = 'offTile';
         gameTile3.className = 'offTile';
         gameTile4.className = 'offTile';
-        if (solution === guess) {
+        if (solution[0] == guess[0] && solution[1] == guess[1] && solution[2] == guess[2] && solution[3] == guess[3]) {
           header.className = 'winner';
           header.textContent = 'Winner!'
           console.log('win');
@@ -605,7 +592,7 @@ debugger;
         gameTile2.className = 'offTile';
         gameTile3.className = 'offTile';
         gameTile4.className = 'offTile';
-        if (solution === guess) {
+        if (solution[0] == guess[0] && solution[1] == guess[1] && solution[2] == guess[2] && solution[3] == guess[3]) {
           header.className = 'winner';
           header.textContent = 'Winner!'
           console.log('win');
@@ -625,7 +612,7 @@ debugger;
         gameTile2.className = 'offTile';
         gameTile3.className = 'offTile';
         gameTile4.className = 'offTile';
-        if (solution === guess) {
+        if (solution[0] == guess[0] && solution[1] == guess[1] && solution[2] == guess[2] && solution[3] == guess[3]) {
           header.className = 'winner';
           header.textContent = 'Winner!'
           console.log('win');
@@ -645,7 +632,7 @@ debugger;
         gameTile2.className = 'offTile';
         gameTile3.className = 'offTile';
         gameTile4.className = 'offTile';
-        if (solution === guess) {
+        if (solution[0] == guess[0] && solution[1] == guess[1] && solution[2] == guess[2] && solution[3] == guess[3]) {
           header.className = 'winner';
           header.textContent = 'Winner!'
           console.log('win');
@@ -665,7 +652,7 @@ debugger;
         gameTile2.className = 'offTile';
         gameTile3.className = 'offTile';
         gameTile4.className = 'offTile';
-        if (solution === guess) {
+        if (solution[0] == guess[0] && solution[1] == guess[1] && solution[2] == guess[2] && solution[3] == guess[3]) {
           header.className = 'winner';
           header.textContent = 'Winner!'
           console.log('win');
