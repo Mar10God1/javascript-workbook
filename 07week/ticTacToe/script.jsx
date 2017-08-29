@@ -30,7 +30,6 @@ class TicTacToe extends React.Component {
 
   render() {
     return (
-
       <div>
         <div className="row">
           <div data-cell="0" onClick={this.click}></div>
