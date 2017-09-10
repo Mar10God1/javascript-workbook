@@ -1,0 +1,58 @@
+body {
+  text-align: center;
+  font-family: 'Carrois Gothic', sans-serif;
+  margin: 0;
+  background-color: black;
+  color: white;
+}
+
+h3 {
+  border: 1px solid yellow;
+  padding: 5px;
+}
+
+#table {
+  border: 1px solid yellow;
+}
+
+table {
+  width: 100%;
+}
+
+tbody {
+  margin: 0, auto;
+}
+
+th {
+  border-bottom: 1px solid grey;
+  text-align: center;
+  color: yellow;
+}
+
+td {
+  padding: 15px;
+}
+
+li {
+  list-style: none;
+}
+
+@media (max-width: 970px) {
+  th {
+    font-size: 12px;
+  }
+  td {
+    padding: 10px;
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 700px) {
+  th {
+    font-size: 10px;
+  }
+  td {
+    padding: 5px;
+    font-size: 8px;
+  }
+}
