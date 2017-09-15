@@ -9747,46 +9747,102 @@ const styles = __webpack_require__(184);
 class Fetch extends React.Component {
   constructor(props) {
     super(props);
-
     this.state = {
       list: []
     };
   }
 
   componentWillMount() {
-    fetch('http://services.groupkt.com/country/get/all').then(response => {
-      response.json().then(data => {
-        this.setState({
-          list: data.RestResponse.result
+    for (let i = 1; i < 50; i++) {
+      fetch(`https://swapi.co/api/people/${i}/`).then(response => {
+        response.json().then(data => {
+          this.setState({
+            list: this.state.list.concat([data])
+          });
         });
       });
-    });
+    }
   }
 
   render() {
-    let lis = [];
+    let character = [];
 
     this.state.list.forEach((item, index) => {
-      lis.push(React.createElement(
-        'li',
+      // Build link to starwars.com character page
+      let name = item.name;
+      let urlName = name.split(' ').join('-').toLowerCase();
+      let urlBegining = 'http://www.starwars.com/databank/';
+      let link = urlBegining + urlName;
+      // Create character card
+      character.push(React.createElement(
+        'div',
         { key: index },
-        item.name
+        React.createElement(
+          'h4',
+          null,
+          item.name
+        ),
+        React.createElement(
+          'li',
+          null,
+          'Birth Year: ',
+          item.birth_year
+        ),
+        React.createElement(
+          'li',
+          null,
+          'Gender: ',
+          item.gender
+        ),
+        React.createElement(
+          'li',
+          null,
+          'Hair Color: ',
+          item.hair_color
+        ),
+        React.createElement(
+          'li',
+          null,
+          'Eye Color: ',
+          item.eye_color
+        ),
+        React.createElement(
+          'li',
+          null,
+          'Skin Color: ',
+          item.skin_color
+        ),
+        React.createElement(
+          'li',
+          null,
+          'Height: ',
+          item.height
+        ),
+        React.createElement(
+          'li',
+          null,
+          'Mass: ',
+          item.mass
+        ),
+        React.createElement(
+          'a',
+          { href: link, target: '_blank' },
+          ' Learn more about ',
+          item.name
+        )
       ));
     });
 
     return React.createElement(
       'div',
-      null,
+      { style: styles },
+      React.createElement('img', { src: 'http://cdn1.sciencefiction.com/wp-content/uploads/2015/03/Star-Wars-Logo.png' }),
       React.createElement(
-        'h1',
+        'h2',
         null,
-        'Test List'
+        'CHARACTERS'
       ),
-      React.createElement(
-        'ul',
-        null,
-        lis
-      )
+      character
     );
   }
 }
@@ -22469,7 +22525,7 @@ exports = module.exports = __webpack_require__(186)(undefined);
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, "body {\n  background: #222222;\n  color: white;\n}\n\nh2 {\n  text-align: center;\n}\n\nh4 {\n  padding: 5px;\n  background: #3273C5;\n}\n\nli {\n  list-style: none;\n}\n\ndiv {\n  padding: 10px;\n  border: 1px solid grey;\n}\n\nimg {\n  display: block;\n  margin: auto;\n  width: 25%;\n  padding-bottom: 25px;\n}\n", ""]);
 
 // exports
 
