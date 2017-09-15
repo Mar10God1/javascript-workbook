@@ -1,0 +1,29 @@
+body {
+  background: #222222;
+  color: white;
+}
+
+h2 {
+  text-align: center;
+}
+
+h4 {
+  padding: 5px;
+  background: #3273C5;
+}
+
+li {
+  list-style: none;
+}
+
+div {
+  padding: 10px;
+  border: 1px solid grey;
+}
+
+img {
+  display: block;
+  margin: auto;
+  width: 25%;
+  padding-bottom: 25px;
+}
